@@ -2,7 +2,7 @@
 
 The project is using Java,maven,mysql,ocsf,javafx,jbdc
 
-Explaintion about the folder: 
+Explaintion about the folders: 
   1)folder "final_project_phaseb" :
   Has the client side , with a GUI using javafx
   
