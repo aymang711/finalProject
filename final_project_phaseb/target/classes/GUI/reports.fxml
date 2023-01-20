@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="768.0" prefWidth="1531.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ReportController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="354.0" prefWidth="628.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TabPane prefHeight="742.0" prefWidth="1540.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Packing List">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="713.0" prefWidth="1536.0" style="-fx-background-color: #e6e6e6;">
+                           <children>
+                              <TableView fx:id="packingTBL" layoutX="14.0" layoutY="47.0" prefHeight="634.0" prefWidth="1237.0">
+                                <columns>
+                                  <TableColumn fx:id="NO" prefWidth="40.0" text="NO" />
+                                  <TableColumn fx:id="SUPPLIER" prefWidth="75.0" text="SUPPLIER" />
+                                  <TableColumn fx:id="CATALOG_NO" prefWidth="97.60000610351562" text="CATALOG_NO" />
+                                  <TableColumn fx:id="DESCRIPTION" prefWidth="88.80006408691406" text="DESCRIPTION" />
+                                  <TableColumn fx:id="UNIT" prefWidth="64.79998779296875" text="UNIT" />
+                                  <TableColumn fx:id="QTY" prefWidth="52.0" text="QTY" />
+                                  <TableColumn fx:id="QUANTITY_IN_BOX" prefWidth="78.4000244140625" text="QTY_IN_BOX" />
+                                  <TableColumn fx:id="TOTAL_BOXES_COILS" prefWidth="127.20001220703125" text="TOTAL_BOXES_COILS" />
+                                  <TableColumn fx:id="BOX_SIZE" prefWidth="62.39996337890625" text="BOX_SIZE" />
+                                  <TableColumn fx:id="BOX_COIL_NET_WEIGHT" prefWidth="144.800048828125" text="BOX_COIL_NET_WEIGHT" />
+                                  <TableColumn fx:id="BOX_COIL_GROSS_WEIGHT" prefWidth="165.5999755859375" text="BOX_COIL_GROSS_WEIGHT" />
+                                  <TableColumn fx:id="TOTAL_NET_WEIGHT" prefWidth="125.0" text="TOTAL_NET_WEIGHT" />
+                                  <TableColumn fx:id="TOTAL_GROSS_WEIGHT" prefWidth="125.0" text="TOTAL_GROSS_WEIGHT" />
+                                  <TableColumn fx:id="PALLET_NUMBER" prefWidth="75.0" text="PALLET_NUMBER" />
+                                  <TableColumn fx:id="BOXES_WITHOUT_PALLETS" prefWidth="125.0" text="BOXES_WITHOUT_PALLETS" />
+                                </columns>
+                              </TableView>
+                              <Text layoutX="1261.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Box Size" underline="true" wrappingWidth="122.0875244140625">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font></Text>   
+                              <TextField fx:id="boxSizeField" layoutX="1391.0" layoutY="124.0" />
+                              <Text layoutX="1261.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Box NETWEIGHT" underline="true" wrappingWidth="120.350830078125">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font></Text>
+                              <Text layoutX="1261.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BOX GROSSWEIGHT" underline="true" wrappingWidth="116.6097412109375">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font></Text>
+                              <TextField fx:id="QinBoxField" layoutX="1392.0" layoutY="83.0" prefHeight="26.0" prefWidth="66.0" />
+                              <TextField fx:id="boxNetWegField" layoutX="1392.0" layoutY="172.0" prefHeight="26.0" prefWidth="66.0" />
+                              <TextField fx:id="boxGrossWegField" layoutX="1392.0" layoutY="221.0" prefHeight="26.0" prefWidth="66.0" />
+                              <Text layoutX="1262.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PALLET NUMBER" underline="true">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="PalletNumField" layoutX="1393.0" layoutY="316.0" prefHeight="26.0" prefWidth="66.0" />
+                              <Text layoutX="1261.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUANTITY IN BOX" underline="true">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="1275.0" layoutY="424.0" mnemonicParsing="false" onAction="#updateItem" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #BCED91;" text="Update Item" />
+                              <Button layoutX="1370.0" layoutY="633.0" mnemonicParsing="false" onAction="#generateLists" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #009900;" text="Generate Reports" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Price List">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="priceListTBL" layoutX="14.0" layoutY="42.0" prefHeight="543.0" prefWidth="1301.0">
+                                <columns>
+                                  <TableColumn fx:id="priceListNo" prefWidth="75.0" text="NO" />
+                                  <TableColumn fx:id="supplierPriceList" prefWidth="75.0" text="SUPPLIER" />
+                                    <TableColumn fx:id="catalogNumPriceList" prefWidth="139.0" text="CATALOG-NUM" />
+                                    <TableColumn fx:id="DesPriceList" prefWidth="225.0" text="DESCRIPTION" />
+                                    <TableColumn fx:id="UnitPriceList" minWidth="9.0" prefWidth="202.0" text="UNIT" />
+                                    <TableColumn fx:id="PricePriceList" prefWidth="159.0" text="UNIT PRICE" />
+                                </columns>
+                              </TableView>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                 <Tab text="invoice">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="invoiceTBL" layoutX="20.0" layoutY="31.0" prefHeight="558.0" prefWidth="1278.0">
+                                <columns>
+                                  <TableColumn fx:id="numInvoice" prefWidth="75.0" text="NO" />
+                                  <TableColumn fx:id="supplierInvoice" prefWidth="75.0" text="SUPPLIER" />
+                                    <TableColumn fx:id="catalogInvoice" prefWidth="92.00001525878906" text="CatalogNum" />
+                                    <TableColumn fx:id="desInvoice" prefWidth="366.40008544921875" text="Description" />
+                                    <TableColumn fx:id="UnitInvoice" prefWidth="81.59991455078125" text="Unit" />
+                                    <TableColumn fx:id="QTYinvoice" prefWidth="55.20001220703125" text="QTY" />
+                                    <TableColumn fx:id="priceFieldInvoice" minWidth="0.0" prefWidth="109.5999755859375" text="UnitPrice" />
+                                    <TableColumn fx:id="totalPriceInvoice" prefWidth="148.0" text="Total USD" />
+                                </columns>
+                              </TableView>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#edf6ff" height="34.0" layoutX="795.0" layoutY="592.0" stroke="BLACK" strokeType="INSIDE" width="162.0" />
+                              <Text layoutX="820.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL :" wrappingWidth="51.13671875">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="totalPriceOFtotal" layoutX="880.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                 <Tab text="BL">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane gridLinesVisible="true" layoutX="300.0" layoutY="130.0" prefHeight="123.0" prefWidth="642.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 
+                                </rowConstraints>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="packge details" textAlignment="CENTER" wrappingWidth="87.71484375" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="gross weight with pallets (KG)" textAlignment="CENTER" wrappingWidth="84.65625" GridPane.columnIndex="1" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="gross weight (KG)" textAlignment="CENTER" wrappingWidth="84.240234375" GridPane.columnIndex="2" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Net weight (KG)" textAlignment="CENTER" wrappingWidth="92.10546875" GridPane.columnIndex="3" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="number of boxes without pallets" textAlignment="CENTER" wrappingWidth="85.046875" GridPane.columnIndex="4" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="number of pallets" textAlignment="CENTER" wrappingWidth="81.1875" GridPane.columnIndex="5" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Packages" textAlignment="CENTER" wrappingWidth="90.556640625" GridPane.columnIndex="6">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f9e25" height="59.0" stroke="BLACK" strokeType="INSIDE" width="90.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f9e25" height="59.0" layoutX="101.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" width="90.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b9943a8" height="59.0" stroke="BLACK" strokeType="INSIDE" width="90.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b9943a8" height="59.0" stroke="BLACK" strokeType="INSIDE" width="90.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b9943a8" height="59.0" stroke="BLACK" strokeType="INSIDE" width="90.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b9943a8" height="59.0" stroke="BLACK" strokeType="INSIDE" width="90.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                                    <Text fx:id="gridGrossWegWithPallet" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="84.875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Text fx:id="gridGrossWeg" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="86.13671875" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <Text fx:id="gridNetWeg" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="86.13671875" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <Text fx:id="gridNumOfBoxes" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="86.13671875" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                    <Text fx:id="gridNumOfPallet" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="90.13671875" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                    <Text fx:id="gridTotalPackages" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="90.13671875" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
